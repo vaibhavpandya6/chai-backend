@@ -6,10 +6,12 @@ const app = express()
 //middleware app.use  cors
 app.use(cors({
     origin: process.env.CORS_ORIGIN,
-    credentials: true
+    credentials: true                             //    Allows cookies and authentication headers to be sent in cross-origin requests.
 }))
 
-// data aata hai
+// data aata hai 
+// app.use used as a middleware  .json and .urlencoded is important for req.body
+//Middleware for Parsing Request Body
 app.use(express.json({limit:"16kb"}))
 app.use(express.urlencoded({extended: true, limit:"16kb"}))
 app.use(express.static("public"))
