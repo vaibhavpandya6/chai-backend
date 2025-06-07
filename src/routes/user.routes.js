@@ -11,10 +11,10 @@ import { loginUser,
     getWatchHistory, 
     updateAccountDetails
  } from "../controllers/user.controller.js";
+ 
 import { upload } from "../middlewares/multer.middleware.js";
-import { loginUser, logoutUser , refreshAccessToken } from "../controllers/user.controller.js";
-import { verifyJWT } from "../middlewares/auth.middleware.js";
 
+import { verifyJWT } from "../middlewares/auth.middleware.js";
 
 const router  = Router();
 
@@ -50,4 +50,5 @@ router.route("/cover-image").patch(verifyJWT, upload.single("coverImage"), updat
 
 router.route("/c/:username").get(verifyJWT, getUserChannelProfile)
 router.route("/history").get(verifyJWT, getWatchHistory)
+
 export default router

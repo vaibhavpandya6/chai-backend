@@ -27,5 +27,9 @@ import userRouter from './routes/user.routes.js'
 
 app.use("/api/v1/users",userRouter )
 
+import commentRouter from "./routes/comments.routes.js"
+
 // http://localhost8000/api/v1/users/register 
+
+app.use("/api/v1/comments",commentRouter)
 export { app } 

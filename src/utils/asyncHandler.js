@@ -1,3 +1,5 @@
+// isse try catch use karne ki zarurat nhi hai
+
 const asyncHandler = (requestHandler) => {
     return (req, res, next) => {
         Promise.resolve(requestHandler(req, res, next)).catch((err) => next(err))

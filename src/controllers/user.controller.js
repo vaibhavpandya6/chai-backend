@@ -77,7 +77,7 @@ const registerUser = asyncHandler( async (req, res) => {
         throw new ApiError(400, "Avatar file is required")
     }
    
-
+// MongoDB mai document crete kr deta
     const user = await User.create({
         fullName,
         avatar: avatar.url,
@@ -497,5 +497,5 @@ export {
     updateUserAvatar,
     updateUserCoverImage,
     getUserChannelProfile,
-    getWatchHistory
+        getWatchHistory
 }
